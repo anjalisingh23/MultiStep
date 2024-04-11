@@ -107,7 +107,7 @@ const MultiStepForm = () => {
   };
 
   return (
-    <div className=" p-2 flex flex-col justify-center  items-center w-full h-screen border-4 border-red-500">
+    <div className=" p-2 flex flex-col justify-center  items-center w-full h-screen">
       <Stepper currentStep={step} />
       {renderStep()}
     </div>
