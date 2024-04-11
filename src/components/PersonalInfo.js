@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 
 const PersonalInfo = ({ formData, handleChange, nextStep }) => {
   const handleSubmit = (e) => {
@@ -7,16 +6,16 @@ const PersonalInfo = ({ formData, handleChange, nextStep }) => {
   };
 
   return (
-    <div className="flex flex-row w-full md:w-3/4  h-full box-border lg:p-10 xl:p-8  shadow-md shadow-slate-400">
+    <div className="flex flex-row w-full md:w-3/4  h-full box-border lg:p-10 xl:p-8  shadow-md ">
       <div className=" basis-1/2">
         <img className="w-full h-full object-cover" src="/images/main.jpg" />
       </div>
       <div className="flex flex-col  w-full basis-1/2 p-4 ">
         <form onSubmit={handleSubmit} className="w-full  bg-white p-2 ">
-          <h2 className="text-2xl font-sans font-bold mb-4">
+          <h2 className="text-2xl font-sans font-bold mb-2">
             Personal Information
           </h2>
-          <p className="font-sans text-slate-400">
+          <p className="font-sans text-sm mb-2 text-slate-400">
             Please provide your name and email address
           </p>
           <div className="mb-4">

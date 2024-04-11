@@ -41,44 +41,44 @@ const ComfortLevel = ({ formData, handleLevelChange, prevStep, nextStep }) => {
 
   return (
       <div className="flex flex-col p-2 justify-start items-center h-full w-full md:w-2/3 lg:w-1/2 box-border ">
-        <h2 className="text-3xl w-full text-center font-semibold ">
+        <h2 className="text-2xl w-full text-center font-semibold ">
           What is your math comfort level?
         </h2>
-        <p className="text-center w-full text-gray-600 mb-4 ">
+        <p className=" text-sm text-center w-full text-gray-600 mb-4 ">
           Choose the highest level you feel confident in — you can always adjust
           later.
         </p>
-        <div className="w-2/3 lg:flex  lg:w-full ">
+        <div className="w-2/3 lg:flex lg:w-full ">
           {mathLevels.map((level) => (
             <div
               key={level.id}
               onClick={()=>handleOptions(level.id)}
-              className={`p-4 rounded-md cursor-pointer text-center m-2 lg:w-1/4 border-2 border-orange-200 ${
+              className={`p-2 rounded-md cursor-pointer text-center m-2 lg:w-1/4 border-2 border-orange-200 ${
                 selectedOption === level.id
                   ? "bg-orange-200"
                   : "hover:bg-orange-100"
               }`}
             >
-              <h3 className="text-lg font-medium mb-2">{level.label}</h3>
-              <p className="text-gray-600 font-mono">{level.content}</p>
+              <h3 className="text-md font-medium mb-1">{level.label}</h3>
+              <p className="text-gray-600 text-sm font-mono">{level.content}</p>
               <p className="text-gray-500 text-sm">{level.level}</p>
             </div>
           ))}
         </div>
-        <div className="flex justify-center m-6  w-2/3 ">
-          <button
-            onClick={prevStep}
-            className="mr-6 bg-orange-300  text-white font-medium py-2 px-4 rounded-md w-1/3 lg:w-1/4"
-          >
-            Prev
-          </button>
-          <button
-            onClick={handleNextStep}
-            className="ml-6 bg-orange-300  text-white font-medium py-2 px-4 rounded-md w-1/3 lg:w-1/4"
-          >
-            Continue
-          </button>
-        </div>
+        <div className="flex justify-center m-4  w-full ">
+        <button
+          onClick={prevStep}
+          className="mr-6 bg-orange-300 text-sm text-white font-medium py-2 px-4 rounded-md w-1/5 "
+        >
+          Prev
+        </button>
+        <button
+          onClick={nextStep}
+          className="ml-6 bg-orange-300 text-sm text-white font-medium py-2 px-4 rounded-md w-1/5 "
+        >
+          Continue
+        </button>
+      </div>
       </div>
   );
 };

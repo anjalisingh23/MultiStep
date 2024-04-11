@@ -41,46 +41,45 @@ const Explore = ({ prevStep, nextStep }) => {
   };
 
   return (
-    <div className="flex flex-col p-2 items-center h-full w-full md:w-2/3 lg:w-1/2 box-border ">
-      <h2 className="text-3xl text-center font-semibold mb-1 w-full  ">
+    <div className="flex flex-col p-2 justify-start items-center h-full w-full md:w-2/3 lg:w-1/2 box-border  ">
+      <h2 className="text-2xl text-center font-semibold mb-1 w-full  ">
         Learning paths based on your answers
       </h2>
-      <p className="text-center text-gray-600 mb-1 w-full">
+      <p className="text-sm text-center text-gray-600 mb-1 w-full">
         Choose one to get started.You can switch anytime
       </p>
-      <div className="flex flex-col h-2/3 m-1 w-3/4 lg:grid lg:grid-cols-2 lg:h-auto   ">
+      <div className="flex flex-col items-center p-2 h-2/3 m-1 w-full lg:grid lg:grid-cols-2 lg:h-auto   ">
         {options.map((option) => (
           <a
             href={option.link}
             target="_blank"
             onClick={() => handleChoice(option.link)}
-            className={`flex items-center h-1/5 lg:h-auto cursor-pointer p-1 m-2 rounded border-2 border-orange-100 ${
+            className={`flex items-center h-1/5 w-4/5 lg:h-5/6 cursor-pointer p-1 m-2 rounded border-2 border-orange-100 ${
               selectedOption === option.id
                 ? "bg-orange-200"
                 : "hover:bg-orange-100"
             }`}
           >
-            <div className="box-border h-full w-1/4  ">
+            <div className="box-border h-full p-1 w-1/4 ">
               <img className="w-full h-full " src={option.icon} />
             </div>
-            <p className="p-1 w-3/4 h-full ">
-              <span className="font-semibold">{option.heading}</span>
+            <p className="text-sm w-3/4 h-full">
+              <span className=" font-semibold">{option.heading}</span>
               {option.content}
             </p>
           </a>
         ))}
       </div>
-      <div className="flex w-2/3 justify-center m-1 md:w-2/3 ">
+      <div className="flex justify-center m-4  w-full ">
         <button
           onClick={prevStep}
-          className="mr-6 bg-orange-300  text-white font-medium py-2 px-4 rounded-md  w-1/3 lg:w-1/5"
+          className="mr-6 bg-orange-300 text-sm text-white font-medium py-2 px-4 rounded-md w-1/5 "
         >
           Prev
         </button>
         <button
           onClick={nextStep}
-          type="submit"
-          className=" bg-orange-300  text-white font-medium py-2 px-2 rounded-md  w-1/3 lg:w-1/5"
+          className="ml-6 bg-orange-300 text-sm text-white font-medium py-2 px-4 rounded-md w-1/5 "
         >
           Home
         </button>

@@ -66,14 +66,14 @@ const ProfileOptions = ({
   };
 
   return (
-    <div className="flex flex-col justify-center items-center h-full w-full md:w-2/3 lg:w-1/2 box-border shadow-md ">
-      <h2 className="text-3xl text-center font-semibold m-4 w-full ">
+    <div className="flex flex-col justify-start items-center h-full w-full md:w-2/3 lg:w-1/2 box-border ">
+      <h2 className="text-2xl text-center font-semibold m-2 w-full ">
         Which describes you best?
       </h2>
-      <p className="text-center text-gray-600 mb-2 w-full ">
+      <p className="text-sm text-center text-gray-600 mb-1 w-full ">
         This will help us personalize your experience.
       </p>
-      <div className="m-6 ml-8 w-3/4 md:w-2/3 ">
+      <div className="m-4 ml-8 w-3/4 md:w-2/3 ">
         {options.map((option) => (
           <div
             key={option.id}
@@ -84,21 +84,21 @@ const ProfileOptions = ({
                 : "hover:bg-orange-100"
             }`}
           >
-            <span className="text-4xl  w-14 ml-3">{option.icon}</span>
-            <span className=" text-lg  ">{option.label}</span>
+            <span className="text-3xl  w-14 ml-3">{option.icon}</span>
+            <span className=" text-sm  ">{option.label}</span>
           </div>
         ))}
       </div>
-      <div className="flex w-2/3 justify-center m-6 md:w-2/3 ">
+      <div className="flex w-2/3 justify-center mb-6 md:w-2/3 ">
         <button
           onClick={prevStep}
-          className="mr-6 bg-orange-300  text-white font-medium py-2 px-4 rounded-md w-1/3 lg:w-1/5"
+          className="mr-6 bg-orange-300 text-sm text-white font-medium py-2 px-4 rounded-md w-1/3 lg:w-1/5"
         >
           Prev
         </button>
         <button
           onClick={handleNextStep}
-          className="ml-6 bg-orange-300  text-white font-medium py-2 px-4 rounded-md w-1/3 lg:w-1/5"
+          className="ml-6 bg-orange-300 text-sm text-white font-medium py-2 px-4 rounded-md w-1/3 lg:w-1/5"
         >
           Continue
         </button>
