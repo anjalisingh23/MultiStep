@@ -1,14 +1,12 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import PersonalInfo from "./PersonalInfo";
 import ProfileOptions from "./ProfileOptions";
 import InterestSelector from "./InterestSelector";
 import RightPlace from "./RightPlace";
-import ComfortLevel from "./ComfortLevel";
-import Options from "./OnWay";
 import OnWay from "./OnWay";
 import Final from "./Final";
 import Level from "./Level";
+import Stepper from "./Stepper";
 
 const MultiStepForm = () => {
   const [step, setStep] = useState(0);
@@ -18,12 +16,11 @@ const MultiStepForm = () => {
     email: "",
     profileOptions: "",
     interests: "",
-    level:"",
+    level: "",
   });
 
   const nextStep = () => {
-   
-    setStep((step+1)%7);
+    setStep((step + 1) % 7);
   };
 
   const prevStep = () => {
@@ -101,15 +98,20 @@ const MultiStepForm = () => {
           />
         );
       case 6:
-        return <Final formData={formData} nextStep={nextStep} prevStep={prevStep} />;
+        return (
+          <Final formData={formData} nextStep={nextStep} prevStep={prevStep} />
+        );
       default:
         return null;
     }
   };
 
-  return <div>{renderStep()}</div>;
+  return (
+    <div className=" p-2 flex flex-col justify-center  items-center w-full h-screen border-4 border-red-500">
+      <Stepper currentStep={step} />
+      {renderStep()}
+    </div>
+  );
 };
 
 export default MultiStepForm;
-
-  

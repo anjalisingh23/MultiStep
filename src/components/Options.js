@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Options = ({ formData,handleLevelChange, prevStep, nextStep }) => {
-  const [selectedOption, selectedOptionChange] = useState("");
+  const [selectedOption, selectedOptionChange] = useState(formData.level);
   const options = [
     {
       id: 1,
@@ -37,21 +36,21 @@ const Options = ({ formData,handleLevelChange, prevStep, nextStep }) => {
     selectedOptionChange(option);
   };
   return (
-    <div className="flex justify-center align-center h-screen box-border bg-white p-4">
-      <div className=" md:basis-3/4 lg:basis-1/2">
-        <h2 className="text-3xl text-center font-semibold m-4 ">
+    
+      <div className="flex flex-col justify-center items-center h-full w-full md:w-2/3 lg:w-1/2 box-border">
+        <h2 className="text-3xl text-center font-semibold m-4 w-full ">
           What is your programming comfort level?
         </h2>
-        <p className="text-center text-gray-600 mb-4">
+        <p className="text-center text-gray-600 mb-2 w-full ">
           Choose the highest level you feel confident in — you can always adjust
           later.
         </p>
-        <div className="m-6 ml-8 grid grid-cols-1 gap-6 ">
+        <div className="m-6 ml-8 w-3/4 md:w-2/3">
           {options.map((option) => (
             <div
               key={option.id}
               onClick={() => handleOptions(option.id)}
-              className={`flex items-center space-x-2 cursor-pointer p-2 rounded border-2 border-orange-100 ${
+              className={`flex  items-center space-x-2 cursor-pointer p-2 m-2 rounded border-2 border-orange-100 ${
                 selectedOption === option.id
                   ? "bg-orange-200"
                   : "hover:bg-orange-100"
@@ -62,22 +61,21 @@ const Options = ({ formData,handleLevelChange, prevStep, nextStep }) => {
             </div>
           ))}
         </div>
-        <div className="flex justify-center m-6  ">
+        <div className="flex w-2/3 justify-center m-6 md:w-2/3  ">
           <button
             onClick={prevStep}
-            className="mr-6 bg-orange-300  text-white font-medium py-2 px-4 rounded-md w-1/5"
+            className="mr-6 bg-orange-300  text-white font-medium py-2 px-4 rounded-md w-1/3 lg:w-1/5"
           >
             Prev
           </button>
           <button
             onClick={handleNextStep}
-            className="ml-6 bg-orange-300  text-white font-medium py-2 px-4 rounded-md w-1/5"
+            className="ml-6 bg-orange-300  text-white font-medium py-2 px-4 rounded-md w-1/3 lg:w-1/5"
           >
             Continue
           </button>
         </div>
       </div>
-    </div>
   );
 };
 export default Options;

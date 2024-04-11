@@ -2,8 +2,8 @@ import React from "react";
 
 const OnWay = ({ formData, prevStep, nextStep }) => {
   return (
-    <div className="flex justify-center h-screen box-border lg:p-4 border-4 border-red-400">
-      <div className=" basis-1/3 lg:basis-1/4">
+    <div className="flex flex-row justify-center  w-full md:w-3/4  h-full box-border lg:p-10 xl:p-8  shadow-md shadow-slate-400">
+      <div className=" basis-1/2">
         <img className="w-full h-full object-cover" src="/images/onway.jpg" />
       </div>
       <div className="flex flex-col justify-center basis-2/3 lg:basis-1/3 ">
@@ -18,16 +18,16 @@ const OnWay = ({ formData, prevStep, nextStep }) => {
             beautiful mysteries, this app will be a sure thing for you.”— Bob V.
           </p>
         </div>
-        <div className="flex justify-center m-6  ">
+        <div className="flex justify-center mt-6  ">
           <button
             onClick={prevStep}
-            className="mr-6 bg-orange-300  text-white font-medium py-2 px-4 rounded-md w-1/3 lg:w-1/5"
+            className="mr-6 bg-orange-300  text-white font-medium py-2 px-4 rounded-md w-1/3 lg:w-1/4"
           >
             Prev
           </button>
           <button
             onClick={nextStep}
-            className="ml-6 bg-orange-300  text-white font-medium py-2 px-4 rounded-md w-1/3 lg:w-1/5"
+            className="ml-6 bg-orange-300  text-white font-medium py-2 px-4 rounded-md w-1/3 lg:w-1/4"
           >
             Continue
           </button>

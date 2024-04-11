@@ -7,7 +7,7 @@ const PersonalInfo = ({ formData, handleChange, nextStep }) => {
   };
 
   return (
-    <div className="flex flex-row  h-screen box-border lg:p-10 xl:p-8">
+    <div className="flex flex-row w-full md:w-3/4  h-full box-border lg:p-10 xl:p-8  shadow-md shadow-slate-400">
       <div className=" basis-1/2">
         <img className="w-full h-full object-cover" src="/images/main.jpg" />
       </div>

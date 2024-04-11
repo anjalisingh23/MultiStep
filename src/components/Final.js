@@ -23,9 +23,9 @@ const Final=({formData,prevStep ,nextStep})=>{
     }
 
     return (
-        <div>
-          {renderCourse()}
-        </div>
+       
+          <>{renderCourse()}</>
+        
     )
 }
 

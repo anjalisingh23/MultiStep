@@ -14,7 +14,7 @@ const InterestSelector = ({
   nextStep,
   prevStep,
 }) => {
-  const [selectedOption, selectedOptionChange] = useState("");
+  const [selectedOption, selectedOptionChange] = useState(formData.interests);
   const options = [
     {
       id: 1,
@@ -85,20 +85,19 @@ const InterestSelector = ({
     selectedOptionChange(option);
   };
   return (
-    <div className="flex justify-center  h-screen box-border bg-white p-4 rounded-md shadow-md ">
-      <div className=" md:basis-3/4 lg:basis-1/2 ">
-        <h2 className="text-3xl text-center font-semibold m-4 ">
+      <div className=" flex flex-col justify-center items-center h-full w-full md:w-2/3 lg:w-1/2 box-border ">
+        <h2 className="text-3xl text-center font-semibold m-4 w-full ">
           Which are you most interested in?
         </h2>
-        <p className="text-center text-gray-600 mb-4">
+        <p className="text-center text-gray-600 mb-2 w-full">
           This will help us get you started (but won't limit your experience).
         </p>
-        <div className="m-6 ml-8 grid grid-cols-1 gap-6 ">
+        <div className="m-6 ml-8 w-3/4 md:w-2/3 ">
           {options.map((option) => (
             <div
               key={option.id}
               onClick={() => handleOptions(option.id)}
-              className={`flex items-center space-x-2 cursor-pointer p-2 rounded border-2 border-orange-100 ${
+              className={`flex  items-center space-x-2 cursor-pointer p-2 m-2 rounded border-2 border-orange-100 ${
                 selectedOption === option.id
                   ? "bg-orange-200"
                   : "hover:bg-orange-100"
@@ -109,7 +108,7 @@ const InterestSelector = ({
             </div>
           ))}
         </div>
-        <div className="flex justify-center m-6  ">
+        <div className="flex w-2/3 justify-center m-6 md:w-2/3 ">
           <button
             onClick={prevStep}
             className="mr-6 bg-orange-300  text-white font-medium py-2 px-4 rounded-md w-1/3 lg:w-1/5"
@@ -124,7 +123,6 @@ const InterestSelector = ({
           </button>
         </div>
       </div>
-    </div>
   );
 };
 
